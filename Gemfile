@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gemspec path: "gems/aws-sdk-core/"
+
 gem 'rake', require: false
 # SDK feature dependencies
 gem 'aws-crt' if ENV['CRT']
@@ -14,7 +16,6 @@ if defined?(JRUBY_VERSION)
 end
 
 # protocol parsers
-gem 'json', '2.7.5' if RUBY_VERSION < '3.0.0'  # temporary due to json 2.8.0 release
 gem 'nokogiri', '>= 1.6.8.1'
 gem 'oga'
 gem 'rexml'
